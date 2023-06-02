@@ -43,7 +43,7 @@ pipeline {
                     sh "ln -s ${sourcePath} ${destinationPath}"
                     sh "rm ${indexFilePath}" // Remove existing index.html if present
                     sh "cp ${sourcePath}/index.html ${indexFilePath}" // Copy the repository's index.html to /var/www/html/
-                    // Additional Apache configuration can be added here if necessary
+                 
                 }
             }
         }
