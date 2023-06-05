@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     def folderName = new Date().format("yyyy-MM-dd-HH-mm-ss")
-                    git url: 'https://github.com/stackexpress-meenakshi/zip-application.git', branch: 'master', dir: folderName
+                    git url: 'https://github.com/stackexpress-meenakshi/zip-application.git', branch: 'main', dir: folderName
                 }
             }
         }
