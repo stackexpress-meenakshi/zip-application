@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     def folderName = new Date().format("yyyy-MM-dd-HH-mm-ss")
-                    git url: 'https://github.com/stackexpress-meenakshi/zip-application.git', branch: 'main', dir: folderName
+                    sh "git clone https://github.com/stackexpress-meenakshi/zip-application.git ${folderName}"
                 }
             }
         }
@@ -35,7 +35,7 @@ pipeline {
                     def destinationPath = "/var/www/html/latest"
                     def indexFilePath = "/var/www/html/index.html"
 
-                    sh "ln -s ${sourcePath} ${destinationPath}"
+                    sh "ln -sf ${sourcePath} ${destinationPath}"
                     sh "cp ${sourcePath}/index.html ${indexFilePath}"
                 }
             }
